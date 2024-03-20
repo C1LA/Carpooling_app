@@ -1,0 +1,63 @@
+<!-- homepage.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+    <style>
+        /* Center the forms horizontally and vertically */
+        .container {
+            display: block;
+            justify-content: center;
+            align-items: top;
+            height: 100vh; /* Make the container full height of the viewport */
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the container full height of the viewport */
+        }
+    </style>
+</head>
+{% block content %}
+<div class="container">
+<h2>Driver Registration</h2>
+<div class="form-container">
+
+<form method="post" action="{% url 'driver_registration' %}">
+    {% csrf_token %}
+    <!-- Your registration form fields here -->
+    <!-- Use proper field names -->
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" placeholder="First Name" required><br>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" placeholder="Last Name" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Email" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Password" required><br>
+
+    <label for="car_model">Car Model:</label>
+    <input type="text" id="car_model" name="car_model" placeholder="Car Model" required><br>
+
+    <label for="license_plate">License Plate:</label>
+    <input type="text" id="license_plate" name="license_plate" placeholder="License Plate" required><br>
+
+    <label for="driving_license">Driving License:</label>
+    <input type="text" id="driving_license" name="driving_license" placeholder="Driving License" required><br>
+
+    <!-- Add more fields as needed -->
+
+    <button type="submit">Register as Driver</button>
+</form>
+</div>
+
+</div>
+{% endblock %}

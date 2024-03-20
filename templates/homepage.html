@@ -1,0 +1,50 @@
+<!-- homepage.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+    <style>
+        /* Center the forms horizontally and vertically */
+        .container {
+            display: block;
+            justify-content: center;
+            align-items: top;
+            height: 100vh; /* Make the container full height of the viewport */
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Make the container full height of the viewport */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to LIFT</h1></br>
+        
+        <!-- Login Form -->
+        <div class="form-container">
+            <h2>Login</h2>
+
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <!-- Your login form fields here -->
+                <input type="text" name="username" placeholder="Username" required></br>
+                <input type="password" name="password" placeholder="Password" required></br>
+                <button type="submit">submit</button></br>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+            <!-- Registration Button -->
+            {%load static%}
+            <a href="{% url 'driver_registration' %}"><button>Register</button></a>
+        </div>
+</body>
+</html>
+

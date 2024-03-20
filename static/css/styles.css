@@ -1,0 +1,19 @@
+/* styles.css */
+
+body {
+    margin: 10;
+    padding: 20;
+    height: 100vh; /* Set the body height to 100% of viewport height */
+    display: block;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #0e0af1; /* Background color */
+}
+
+.container {
+    text-align: center; /* Center the content inside the container */
+}
+
+.form-container {
+    margin-bottom: 100px; /* Add some space between forms */
+} 

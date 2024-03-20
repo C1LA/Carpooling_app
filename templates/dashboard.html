@@ -1,0 +1,36 @@
+<!-- dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Your Dashboard</h1>
+    
+    <!-- Display user's profile details -->
+    <h2>User Profile</h2>
+    <p>Username: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+    <!-- Add more profile details as needed -->
+
+    <!-- Display upcoming rides -->
+    <h2>Upcoming Rides</h2>
+    <ul>
+        {% for ride in upcoming_rides %}
+            <li>{{ ride.source }} to {{ ride.destination }} - {{ ride.date_time }}</li>
+        {% empty %}
+            <li>No upcoming rides.</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add options to create or join rides -->
+    <h2>Create or Join a Ride</h2>
+    <a href="{% url 'create_ride' %}">Create a Ride</a>
+    <a href="{% url 'join_ride' %}">Join a Ride</a>
+
+</body>
+</html>
+ 
